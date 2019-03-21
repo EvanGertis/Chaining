@@ -63,7 +63,7 @@ public class ChainedHashtable {
 
     //hashing function.
     private int hashKey(String key){
-        return key.length() % hashTable.length;
+        return Math.abs(key.hashCode() % hashTable.length); // proper hashing by string hashcode.
     }
 
     //function to print out results.
